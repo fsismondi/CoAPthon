@@ -92,7 +92,7 @@ def main(argv):
     'port: %s' % args.port
 
     suite = unittest.TestSuite()
-    Finterop_Tests.server_address = (args.ip, args.port)
+    Finterop_Tests.server_address = (args.ip, int(args.port))
     suite.addTest(Finterop_Tests(args.testcase))
     runner = unittest.TextTestRunner()
     runner.run(suite)
