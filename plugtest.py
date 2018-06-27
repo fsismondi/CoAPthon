@@ -187,7 +187,7 @@ class Tests(unittest.TestCase):
 
     def test_td_coap_core_02(self):
         print "TD_COAP_CORE_02"
-        path = "/test_post"
+        path = "/test"
         req = Request()
 
         req.code = defines.Codes.POST.number
@@ -204,7 +204,7 @@ class Tests(unittest.TestCase):
         expected.code = defines.Codes.CREATED.number
         expected.token = None
         expected.payload = None
-        expected.location_path = "/test_post"
+        expected.location_path = "/test"
 
         self.current_mid += 1
         self._test_with_client([(req, expected)])
@@ -315,7 +315,7 @@ class Tests(unittest.TestCase):
 
     def test_td_coap_core_06(self):
         print "TD_COAP_CORE_06"
-        path = "/test_post"
+        path = "/test"
         req = Request()
 
         req.code = defines.Codes.POST.number
@@ -332,7 +332,7 @@ class Tests(unittest.TestCase):
         expected.code = defines.Codes.CREATED.number
         expected.token = None
         expected.payload = None
-        expected.location_path = "/test_post"
+        expected.location_path = "/test"
 
         self.current_mid += 1
         self._test_with_client([(req, expected)])
@@ -407,7 +407,7 @@ class Tests(unittest.TestCase):
         expected2.payload = "Separate Resource"
 
         self.current_mid += 1
-        self._test_plugtest([(req, expected), (None, expected2)])
+        self._test_with_client([(req, expected)])
 
     def test_td_coap_core_10(self):
         print "TD_COAP_CORE_10"

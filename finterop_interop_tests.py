@@ -7,6 +7,7 @@ import sys
 
 
 class Finterop_Tests(plugtest.Tests):
+    # (!) test cases nmbering made by coapthon developer is different from what we use
     server_address = (None, None)
 
     def setUp(self):  # override Tests.setUp
@@ -16,7 +17,7 @@ class Finterop_Tests(plugtest.Tests):
     def tearDown(self):  # override Tests.tearDown
         pass
 
-    def test_td_coap_core_01(self): # no real need to override, but makes it more clear
+    def test_td_coap_core_01(self):  # no real need to override, but makes it more clear
         plugtest.Tests.test_td_coap_core_01(self)
 
     def test_td_coap_core_02(self):
@@ -63,24 +64,24 @@ def main(argv):
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
-            "-t",
-            "--testcase",
-            choices=testcases,
-            help="Choose interop testcase to execute"
+        "-t",
+        "--testcase",
+        choices=testcases,
+        help="Choose interop testcase to execute"
     )
 
     parser.add_argument(
-            "-ip",
-            "--ip",
-            default="bbbb::2",
-            help="target IP address of the server needed. Example: 'bbbb::2'"
+        "-ip",
+        "--ip",
+        default="bbbb::2",
+        help="target IP address of the server needed. Example: 'bbbb::2'"
     )
 
     parser.add_argument(
-            "-p",
-            "--port",
-            default=5683,
-            help="target port of the server needed"
+        "-p",
+        "--port",
+        default=5683,
+        help="target port of the server needed"
     )
 
     args = parser.parse_args()
